@@ -20,6 +20,8 @@ Enter password:
 Answer
 42
 
+xdg-open http://localhost/
+
 # Stop
 docker-compose stop
 
