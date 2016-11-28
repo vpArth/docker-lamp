@@ -2,7 +2,7 @@ version: '2'
 
 services:
   db:
-    build: ./mysql
+    build: mysql
     volumes:
       - ./.db:/var/lib/mysql
     environment:
@@ -10,3 +10,10 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  php-apache:
+    build: php7-apache
+    ports:
+      - '80:80'
+      - '8000:8000'
+    volumes:
+      - ${APP_PATH}:/var/www
